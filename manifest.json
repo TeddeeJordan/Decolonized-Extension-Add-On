@@ -1,0 +1,17 @@
+{
+"manifest_version": 3,
+    "name": "Chrome Decolonized",
+    "description": "Replaces foreign names for tribes and locations in tribal homelands with the original names used by the indigenous people",
+    "version": "1.0",
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
