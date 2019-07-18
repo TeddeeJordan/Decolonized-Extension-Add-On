@@ -1,11 +1,14 @@
 ﻿var elements = document.getElementsByTagName('*');
 
+
 // Declared here, defined at bottom of file
 var tribeList = {
 "Gros Ventre": "A'aninin",
 "Mojave": "Aha Makhav",
 "Mohave": "Aha Makhav",
-"Alabama": "Albaamaha",
+"Alabama Tribe": "Albaamaha Tribe",
+"Alabama Indian": "Albaamaha Indian",
+"Alabama Nation": "Albaamaha Nation",
 "Ojibwa": "Anishinaabe",
 "Ojibwe": "Anishinaabe",
 "Chippewa": "Anishinaabe",
@@ -21,6 +24,7 @@ var tribeList = {
 "Chetco": "Cheti",
 "Chickasaw": "Chikasha",
 "Dakota": "Dakhóta",
+"Navajo Nation": "Naabeehó Bináhásdzo",
 "Navajo": "Diné",
 "Navajo": "Diné",
 "Muscogee": "Este Mvskokvlke",
@@ -55,7 +59,6 @@ var tribeList = {
 "Cayuse": "Liksiyu",
 "Menominee": "Mamaceqtaw",
 "Miami": "Myaamiaki",
-"Navajo Nation": "Naabeehó Bináhásdzo",
 "Hupa": "Natinixwe",
 "Hoopa": "Natinixwe",
 "Apache": "N'de",
@@ -113,7 +116,7 @@ var tribeList = {
 "Hoh Indian": "Chalá·at Indian",
 "the Creek": "the Este Mvskokvlke",
 "the Delaware": "the Lenape",
-"Cherokee": "Tsalagi (ᏣᎳᎩ)",
+"Cherokee": "Tsalagi",
 "Northern Cheyenne Indian Reservations": "Tsėhéstáno",
 "Cheyenne": "Tsêhéstáno",
 "Sarcee": "Tsuut'ina",
@@ -199,6 +202,8 @@ for (var i = 0; i < elements.length; i++) {
             if (replacedText !== text) {
                 element.replaceChild(document.createTextNode(replacedText), node);
             }
+			
+			
         }
     }
 }
