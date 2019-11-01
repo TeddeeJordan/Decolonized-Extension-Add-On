@@ -1,18 +1,37 @@
-var clickit = 0;
+const state = {
+  loaded:   {},
+  injected: {},
+}
+
+const toggleIn = ({id:tab_id}) => {
+  // toggle out: it's currently loaded and injected
+  if (state.loaded[tab_id] && state.injected[tab_id]) {
+    chrome.tabs.executeScript(tab_id, { file: 'content.js' })
+	state.injected[tab_id] = false;
+	
+  }
+
+  // toggle in: it's loaded and needs injected
+  else if (state.loaded[tab_id] && !state.injected[tab_id]) {
+	chrome.tabs.executeScript(tab_id, { file: 'colonized.js' });
+	state.injected[tab_id] = true;
+	
+  }
+
+  // fresh start in tab
+  else {
+    chrome.tabs.executeScript(tab_id, { file: 'content.js' })
+    state.loaded[tab_id]    = true;
+    state.injected[tab_id]  = false;
+  }
+
+  chrome.tabs.onUpdated.addListener(function(tabId) {
+    if (tabId === tab_id)
+      state.loaded[tabId] = false;
+	})
+}
+
 
 chrome.browserAction.onClicked.addListener(function(tab) {
-	if (clickit == 0){
-		chrome.tabs.executeScript(tab.id, {file:"content.js"}); //execute for this tab
-		clickit++;
-		//alert("Clickit was 0 and now is " + clickit);
-	}else if (clickit == 1){
-		chrome.tabs.executeScript(tab.id, {file:"colonized.js"}); // revert for this tab
-		clickit++;
-		//alert("Clickit was 1 and now is " + clickit);
-	}else{
-		chrome.tabs.executeScript(tab.id, {file:"content.js"}); //execute for this tab
-		clickit = 1;
-		//alert("Clickit was neither and now is " + clickit);
-	}
-	
+   toggleIn({id: tab.id});
 });
