@@ -174,7 +174,8 @@ var tribeList = {
 "Zuni": "A:shiwi",
 "Biloxi": "Tanêks(a)",
 "Tuscarora": "Skarù:ręˀ",
-"Nez Perce": "Niimíipuu"
+"Nez Perce": "Niimíipuu",
+"Arikara": "Sahnish"
 
 
 
