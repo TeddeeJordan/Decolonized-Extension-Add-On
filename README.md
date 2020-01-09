@@ -4,6 +4,8 @@ When you load a website you will see the icon to (De)Colonize your pages. Initia
 
 This extension is in beta stage. I am also working on crowdsourcing more indigenous names and hope to include indigenous endonyms from around the world and indigenous names for places over time. 
 
+As of 1/9/2020 I have ported this to the Mozilla Firefox Add-On's store, and am awaiting approval for it to be available as a Firrox Add-On.
+
 Thanks for checking it out, and I hope you enjoy learning more about the indigenous people and languages around you.
 
 It can be downloaded from the Chrome Web Store here: https://chrome.google.com/webstore/detail/chrome-decolonized/ijhddhjbhjjbnglppjeafggokfcjnece
